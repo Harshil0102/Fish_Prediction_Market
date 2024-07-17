@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Weight Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function validateForm() {
+            let length1 = document.forms["predictionForm"]["Length1"].value;
+            let length2 = document.forms["predictionForm"]["Length2"].value;
+            let length3 = document.forms["predictionForm"]["Length3"].value;
+            let height = document.forms["predictionForm"]["Height"].value;
+            let width = document.forms["predictionForm"]["Width"].value;
+            if (length1 == "" || length2 == "" || length3 == "" || height == "" || width == "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Fish Weight Prediction</h1>
+        <form name="predictionForm" action="/predict" method="post" onsubmit="return validateForm()">
+            <label for="Length1">Length1:</label>
+            <input type="text" id="Length1" name="Length1">
+            <label for="Length2">Length2:</label>
+            <input type="text" id="Length2" name="Length2">
+            <label for="Length3">Length3:</label>
+            <input type="text" id="Length3" name="Length3">
+            <label for="Height">Height:</label>
+            <input type="text" id="Height" name="Height">
+            <label for="Width">Width:</label>
+            <input type="text" id="Width" name="Width">
+            <button type="submit">Predict</button>
+        </form>
+        <h2>{{ prediction_text }}</h2>
+    </div>
+</body>
+</html>
