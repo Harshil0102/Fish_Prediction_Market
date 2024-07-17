@@ -1,17 +1,15 @@
 from flask import Flask, request, jsonify, render_template
-import pickle
+import joblib
 import numpy as np
 import os
 
 app = Flask(__name__)
 
 # Load the model and scaler
-model_path = os.path.join(os.path.dirname(__file__), 'model/model.pkl')
-scaler_path = os.path.join(os.path.dirname(__file__), 'model/scaler.pkl')
-with open(model_path, 'rb') as file:
-    model = pickle.load(file)
-with open(scaler_path, 'rb') as file:
-    scaler = pickle.load(file)
+model_path = os.path.join(os.path.dirname(__file__), 'model/model.joblib')
+scaler_path = os.path.join(os.path.dirname(__file__), 'model/scaler.joblib')
+model = joblib.load(model_path)
+scaler = joblib.load(scaler_path)
 
 @app.route('/')
 def home():
