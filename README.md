@@ -17,3 +17,8 @@ This project aims to predict the weight of fish species based on various attribu
   - Integration with the trained model for predictions
 - **Deployment**: Render for hosting the application online
 
+## Usage
+- Access the deployed web application URL.
+- Enter the fish attributes in the form fields.
+- Submit the form to get the predicted weight of the fish species.
+
