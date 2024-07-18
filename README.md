@@ -6,7 +6,6 @@ This project aims to predict the weight of fish species based on various attribu
 ## Project Structure
 
 ### 1. Machine Learning Model
-- **Dataset**: Fish Market dataset from Kaggle ([Fish Market Dataset](https://www.kaggle.com/aungpyaeap/fish-market))
 - **Model**: Random Forest Regression
 - **Techniques**: Grid Search CV for hyperparameter tuning
 
